@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דשבורד אצטדיון - מוקד מכירות חי</title>
+    <title>מונדיאל הלידים - מוקד דרום</title>
     <!-- פונט מקצועי וקריא מבית גוגל -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,18 +74,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 40px;
+            padding: 20px 40px;
             z-index: 10;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
         }
 
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-area img {
+            height: 65px;
+            /* גובה מותאם ללוגו של לאומית */
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
         .logo-area h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 0.5px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(45deg, #fff, var(--text-muted));
+            background: linear-gradient(45deg, #fff, #e2e8f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -164,9 +182,11 @@
         }
 
         .team-name {
-            font-size: 24px;
+            font-size: 36px;
+            /* הגדלה משמעותית מ-24px */
             font-weight: 800;
             color: var(--text-main);
+            letter-spacing: 0.5px;
         }
 
         .team-metrics {
@@ -176,16 +196,25 @@
             text-align: center;
         }
 
+        .metric-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .metric-box .label {
-            font-size: 12px;
+            font-size: 15px;
+            /* הגדלה מ-12px לאיזון */
             color: var(--text-muted);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         .metric-box .val {
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 32px;
+            /* הגדלה משמעותית מ-22px */
+            font-weight: 800;
         }
 
         /* גרף התקדמות מעוצב - גרסה מוגדלת ומרכזית */
@@ -197,11 +226,10 @@
 
         .progress-bar-container {
             width: 100%;
-            height: 80px;
-            /* גובה משמעותי מאוד למסך */
+            height: 85px;
+            /* הגבהה קלה נוספת לנוכחות מקסימלית */
             background: rgba(0, 0, 0, 0.4);
-            border-radius: 40px;
-            /* קצוות עגולים ורכים */
+            border-radius: 45px;
             position: relative;
             box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.6), 0 2px 5px rgba(255, 255, 255, 0.05);
             border: 2px solid var(--card-border);
@@ -211,9 +239,8 @@
         .progress-bar-fill {
             height: 100%;
             width: 0%;
-            border-radius: 40px;
+            border-radius: 45px;
             transition: width 1s cubic-bezier(0.4, 0, 0.2, 1), background-color 1s ease;
-            /* הוספת אפקט הברקה עדין שנותן נפח */
             background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.15) 100%);
             position: absolute;
             top: 0;
@@ -225,7 +252,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 42px;
+            font-size: 54px;
+            /* הגדלה משמעותית מ-42px */
             font-weight: 900;
             color: #ffffff;
             z-index: 10;
@@ -235,7 +263,7 @@
             letter-spacing: 1px;
         }
 
-        /* אנימציית זהב מנצנץ מעל 120% - הותאמה לגרף הגדול */
+        /* אנימציית זהב מנצנץ מעל 120% */
         @keyframes goldShimmer {
             0% {
                 background-position: 0% 50%;
@@ -325,7 +353,6 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
-        /* צבעי פודיום לשלושת המקומות הראשונים */
         tr:nth-child(1) .rank-badge {
             background: #fbbf24;
             color: #000;
@@ -422,7 +449,6 @@
             font-size: 12px;
         }
 
-        /* מצבי שגיאה או טעינה */
         .status-badge {
             font-size: 11px;
             padding: 4px 10px;
@@ -446,8 +472,12 @@
 
     <header>
         <div class="logo-area">
-            <h1>דשבורד אצטדיון</h1>
-            <span id="data-status">טוען נתונים במעקב חי...</span>
+            <!-- שילוב לוגו לאומית מתוך אותה תיקייה -->
+            <img src="LeumitLogo.png" alt="לוגו לאומית">
+            <div class="title-wrapper">
+                <h1>מונדיאל הלידים - מוקד דרום</h1>
+                <span id="data-status">טוען נתונים במעקב חי...</span>
+            </div>
         </div>
         <div class="live-clock" id="clock">00:00:00</div>
     </header>
@@ -554,7 +584,6 @@
     </div>
 
     <script>
-        // עדכון שעון מקומי חי בראש המסך
         function updateClock() {
             const now = new Date();
             document.getElementById('clock').textContent = now.toLocaleTimeString('he-IL', { hour12: false });
@@ -562,34 +591,27 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // פונקציית עזר לחישוב צבע מד ההתקדמות מ-0% עד 100% (מאדום לירוק) ומעל 100% לזהב
         function getProgressBarColor(percent) {
             if (percent <= 100) {
-                // שימוש במודל HSL למעבר נקי לחלוטין מאדום (0) לירוק (120)
                 const hue = (percent / 100) * 120;
                 return `hsl(${hue}, 90%, 45%)`;
             } else if (percent < 120) {
-                // מעבר הדרגתי מירוק (120) לגוון זהב (45)
                 const diff = percent - 100;
                 const hue = 120 - ((diff / 20) * 75);
                 return `hsl(${hue}, 100%, 50%)`;
             }
-            return ''; // עבור 120% ומעלה נשתמש באנימציה הייעודית ב-CSS
+            return '';
         }
 
-        // עדכון הוויזואליות של כרטיסיית צוות ספציפי
         function renderTeamCard(prefix, target, actual, percent) {
             document.getElementById(`${prefix}-target`).textContent = target;
             document.getElementById(`${prefix}-actual`).textContent = actual;
             document.getElementById(`${prefix}-percent`).textContent = percent + '%';
 
             const barFill = document.getElementById(`${prefix}-bar`);
-
-            // הגבלת תצוגת הגרף המקסימלית ל-100% או 120% ברוחב הפיזי
             const visualWidth = Math.min(percent, 120);
             barFill.style.width = `${(visualWidth / 120) * 100}%`;
 
-            // החלת מחלקת עיצוב בהתאם לחוקי הצבע הנדרשים
             if (percent >= 120) {
                 barFill.className = "progress-bar-fill gold-shimmer";
                 barFill.style.backgroundColor = "";
@@ -599,24 +621,22 @@
             }
         }
 
-        // בנייה ואנימציה של שורת המבזקים הרצה בתחתית
         let tickerAnimeId = null;
         function initTickerMarquee() {
             const track = document.getElementById('ticker-track');
             if (!track) return;
 
-            // עצירת אנימציה קודמת במידה וקיימת
             if (tickerAnimeId) cancelAnimationFrame(tickerAnimeId);
 
             let currentX = window.innerWidth;
             track.style.transform = `translateX(${currentX}px)`;
 
             function step() {
-                currentX -= 1.5; // מהירות הריצה של השורה
+                currentX -= 1.5;
                 const trackWidth = track.offsetWidth;
 
                 if (currentX < -trackWidth) {
-                    currentX = window.innerWidth; // חזרה להתחלה מצד ימין
+                    currentX = window.innerWidth;
                 }
                 track.style.transform = `translateX(${currentX}px)`;
                 tickerAnimeId = requestAnimationFrame(step);
@@ -624,34 +644,31 @@
             step();
         }
 
-        // נתוני דמו מוכנים מראש לגיבוי מלא (Fallback) במקרה של חסימת CORS מקומית
         const mockData = {
             teams: {
-                alpha: { target: 20, actual: 24, percent: 120 }, // ידגים זהב מנצנץ
-                star: { target: 20, actual: 15, percent: 75 },   // ידגים צבע ירקרק-צהוב
-                flash: { target: 20, actual: 2, percent: 10 }    // ידגים צבע אדום
+                alpha: { target: 20, actual: 24, percent: 120 },
+                star: { target: 20, actual: 15, percent: 75 },
+                flash: { target: 20, actual: 2, percent: 10 }
             },
             leaderboard: [
                 { rank: 1, name: "דוד", leads: 10 },
-                { rank: 2, name: "מיכאל", leads: 8 },
-                { rank: 3, name: "אודיה", leads: 7 },
-                { rank: 4, name: "רונית", leads: 6 },
-                { rank: 5, name: "מירב", leads: 5 },
-                { rank: 6, name: "שני", leads: 4 },
-                { rank: 7, name: "הודיה", leads: 4 },
-                { rank: 8, name: "אביגיל", leads: 3 },
-                { rank: 9, name: "מני", leads: 2 },
+                { rank: 2, name: "מיכאל", leads: 5 },
+                { rank: 3, name: "אודיה", leads: 5 },
+                { rank: 4, name: "רונית", leads: 3 },
+                { rank: 5, name: "מירב", leads: 2 },
+                { rank: 6, name: "שני", leads: 2 },
+                { rank: 7, name: "הודיה", leads: 2 },
+                { rank: 8, name: "אביגיל", leads: 1 },
+                { rank: 9, name: "מני", leads: 1 },
                 { rank: 10, name: "שילת", leads: 1 }
             ],
             ticker: [
                 { time: "10:19:00", text: "רונית העבירה ליד נוסף!!! 🔥" },
                 { time: "10:20:00", text: "אביגיל העבירה את הליד הראשון שלה להיום ⚽" },
-                { time: "10:23:00", text: "צוות אלפא עמד ביעד! מתקרב ל-120% ביצוע! 🏆" },
-                { time: "10:30:00", text: "מבזק ישיר: מוקד סטאר פתח בריצת מכירות מטורפת!" }
+                { time: "10:23:00", text: "צוות אלפא עמד ביעד! מתקרב ל-120% ביצוע! 🏆" }
             ]
         };
 
-        // פונקציית הרינדור הראשית המקבלת את הנתונים המעובדים ומציגה אותם על המסך
         function populateDashboard(data, isSimulated = false) {
             const statusEl = document.getElementById('data-status');
             if (isSimulated) {
@@ -660,12 +677,10 @@
                 statusEl.innerHTML = '<span class="status-badge status-live">מחובר לקובץ נתונים חי DATA.xlsx</span>';
             }
 
-            // 1. עדכון כרטיסיות הצוותים
             renderTeamCard('alpha', data.teams.alpha.target, data.teams.alpha.actual, data.teams.alpha.percent);
             renderTeamCard('star', data.teams.star.target, data.teams.star.actual, data.teams.star.percent);
             renderTeamCard('flash', data.teams.flash.target, data.teams.flash.actual, data.teams.flash.percent);
 
-            // 2. עדכון טבלת 10 המובילים
             const tbody = document.getElementById('leaderboard-rows');
             tbody.innerHTML = '';
             data.leaderboard.forEach(row => {
@@ -678,7 +693,6 @@
                 tbody.appendChild(tr);
             });
 
-            // 3. עדכון שורת המבזקים (מקסימום 10 מבזקים עליונים)
             const tickerTrack = document.getElementById('ticker-track');
             tickerTrack.innerHTML = '';
             const topNews = data.ticker.slice(0, 10);
@@ -694,37 +708,29 @@
                 });
             }
 
-            // אתחול מחדש של ריצת השורה רק אם השתנו נתונים
             initTickerMarquee();
         }
 
-        // טעינה וניתוח של קובץ ה-Excel האמיתי
         async function loadExcelData() {
             try {
-                // משיכת הקובץ מאותו מיקום של קובץ ה-HTML
                 const response = await fetch('DATA.xlsx', { cache: 'no-store' });
                 if (!response.ok) throw new Error('File not found or local CORS restriction');
 
                 const arrayBuffer = await response.arrayBuffer();
                 const workbook = XLSX.read(arrayBuffer, { type: 'array' });
 
-                // קריאת הגיליון הראשון בקובץ
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
-                // המרת הגיליון למערך דו-ממדי (Matrix) של שורות ועמודות
                 const matrix = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
                 if (!matrix || matrix.length < 2) {
                     throw new Error('הקובץ ריק או לא במבנה הנכון');
                 }
 
-                // עיבוד נתוני טבלת הצוותים (עמודות A עד D)
-                // שורה 1 כותרות, שורה 2 יעדים (אינדקס 1 במערך), שורה 3 ביצוע (אינדקס 2 או חישוב)
                 let targetRow = matrix.find(row => row && row[0] === 'יעד') || matrix[1];
                 let actualRow = matrix.find(row => row && row[0] === 'ביצוע') || matrix[2];
 
-                // שליפת ערכים ישירה מתוך העמודות (B=1, C=2, D=3) עם המרה בטוחה למספרים
                 const alphaTarget = Number(targetRow[1]) || 20;
                 const alphaActual = Number(actualRow[1]) || 0;
                 const alphaPercent = alphaTarget > 0 ? Math.round((alphaActual / alphaTarget) * 100) : 0;
@@ -737,11 +743,10 @@
                 const flashActual = Number(actualRow[3]) || 0;
                 const flashPercent = flashTarget > 0 ? Math.round((flashActual / flashTarget) * 100) : 0;
 
-                // עיבוד טבלת 10 הנציגים המובילים (עמודות G:I -> אינדקסים 6, 7, 8)
                 const leaderboard = [];
                 for (let i = 1; i <= 10; i++) {
                     const row = matrix[i];
-                    if (row && row[7]) { // אם קיים שם נציג בעמודה H
+                    if (row && row[7]) {
                         leaderboard.push({
                             rank: Number(row[6]) || i,
                             name: row[7],
@@ -750,11 +755,10 @@
                     }
                 }
 
-                // עיבוד טבלת המבזקים (עמודות K:L -> אינדקסים 10, 11)
                 const ticker = [];
                 for (let i = 1; i < matrix.length; i++) {
                     const row = matrix[i];
-                    if (row && (row[10] || row[11])) { // שעה או תוכן מבזק
+                    if (row && (row[10] || row[11])) {
                         ticker.push({
                             time: row[10] ? String(row[10]) : '',
                             text: row[11] ? String(row[11]) : ''
@@ -762,7 +766,6 @@
                     }
                 }
 
-                // בניית אובייקט הנתונים המלא הסופי ומסירתו לרינדור
                 const parsedData = {
                     teams: {
                         alpha: { target: alphaTarget, actual: alphaActual, percent: alphaPercent },
@@ -777,12 +780,10 @@
 
             } catch (error) {
                 console.warn("הדשבורד פועל במצב גיבוי עקב הגבלת דפדפן מקומית:", error.message);
-                // במקרה של הרצה ללא שרת מקומי, נציג את נתוני הסימולציה המדויקים כדי שהמסך לא יישאר ריק
                 populateDashboard(mockData, true);
             }
         }
 
-        // הפעלה ראשונית של המערכת וקביעת לולאת רענון קבועה כל 5 שניות
         loadExcelData();
         setInterval(loadExcelData, 5000);
     </script>
